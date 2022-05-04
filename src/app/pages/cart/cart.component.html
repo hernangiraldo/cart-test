@@ -1,7 +1,10 @@
-<article *ngFor="let p of products$ | async">
-  <app-product
-    [product]="p"
-    [isCart]="true"
-    (deleteItem)="deleteItem($event)"
-  ></app-product>
-</article>
+<ng-container *ngIf="products$ | async as products">
+  <h2>Hay {{ products.length }} producto{{ (products.length > 1 || products.length === 0) ? 's' : '' }} en el carrito</h2>
+  <article *ngFor="let p of products">
+    <app-product
+      [product]="p"
+      [isCart]="true"
+      (deleteItem)="deleteItem($event)"
+    ></app-product>
+  </article>
+</ng-container>

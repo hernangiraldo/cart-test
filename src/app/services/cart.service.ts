@@ -17,6 +17,11 @@ export class CartService {
 
   addToCart(product: Product) {
     const currentProducts = this.#products.getValue();
+    const exist = currentProducts.find(p => p.id === product.id);
+    if (exist) {
+      alert('Product already in cart');
+      return;
+    }
     const newProducts = [...currentProducts, product];
     this.#products.next(newProducts);
   }
