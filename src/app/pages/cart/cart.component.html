@@ -1,0 +1,7 @@
+<article *ngFor="let p of products$ | async">
+  <app-product
+    [product]="p"
+    [isCart]="true"
+    (deleteItem)="deleteItem($event)"
+  ></app-product>
+</article>

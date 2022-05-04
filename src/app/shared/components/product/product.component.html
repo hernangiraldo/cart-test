@@ -1,0 +1,7 @@
+<img [src]="product.thumbnailUrl" alt="">
+<p>{{ product.title }}</p>
+<div>
+  <button *ngIf="!isCart" (click)="addToCart.emit(product)">add to cart</button>
+  <button *ngIf="isCart" (click)="deleteItem.emit(product.id)">delete</button>
+</div>
+

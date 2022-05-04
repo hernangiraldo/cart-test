@@ -1,0 +1,32 @@
+main {
+  position: absolute;
+  inset: 0;
+  bottom: 80px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+strong {
+  color: lightcoral;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  gap: 2rem;
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+}
